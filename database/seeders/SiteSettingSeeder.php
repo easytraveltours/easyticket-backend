@@ -31,6 +31,7 @@ class SiteSettingSeeder extends Seeder
             ['key' => 'footer_address', 'value' => 'ISE Towers, 55-B Jinnah Avenue, Blue Area, Islamabad, Pakistan.', 'description' => 'Footer Office Address'],
             ['key' => 'footer_phone', 'value' => '+92 51 280 1199', 'description' => 'Footer Direct Desk Telephone'],
             ['key' => 'footer_whatsapp', 'value' => '+92 300 1234567', 'description' => 'Footer Support WhatsApp Helpline'],
+            ['key' => 'footer_email', 'value' => 'operations@easyticket.com.pk', 'description' => 'Footer Operations / Support Email'],
             ['key' => 'footer_support_badge', 'value' => '24/7 Ticketing Desk', 'description' => 'Footer Support Badge Text'],
             ['key' => 'footer_hubs_sectors', 'value' => "Islamabad (ISB) ⇄ Dubai (DXB)\nLahore (LHE) ⇄ Jeddah (JED)\nKarachi (KHI) ⇄ London (LHR)\nPeshawar (PEW) ⇄ Riyadh (RUH)\nSialkot (SKT) ⇄ Sharjah (SHJ)", 'description' => 'Footer Hubs & Sectors List'],
             ['key' => 'footer_bank_partners', 'value' => 'Meezan Bank (Islamic), Habib Bank Limited (HBL), Bank Alfalah, Allied Bank (ABL)', 'description' => 'Footer Settlement Bank Partner Names'],

@@ -104,6 +104,7 @@ class SiteSettingController extends Controller
                 'footer_address' => SiteSetting::get('footer_address', SiteSetting::get('office_address', 'ISE Towers, 55-B Jinnah Avenue, Blue Area, Islamabad, Pakistan.')),
                 'footer_phone' => SiteSetting::get('footer_phone', SiteSetting::get('contact_phone', SiteSetting::get('support_phone', '+92 51 280 1199'))),
                 'footer_whatsapp' => SiteSetting::get('footer_whatsapp', SiteSetting::get('support_whatsapp', '+92 300 1234567')),
+                'footer_email' => SiteSetting::get('footer_email', SiteSetting::get('contact_email', 'operations@easyticket.com.pk')),
                 'footer_support_badge' => SiteSetting::get('footer_support_badge', '24/7 Ticketing Desk'),
                 'footer_hubs_sectors' => SiteSetting::get('footer_hubs_sectors', "Islamabad (ISB) ⇄ Dubai (DXB)\nLahore (LHE) ⇄ Jeddah (JED)\nKarachi (KHI) ⇄ London (LHR)\nPeshawar (PEW) ⇄ Riyadh (RUH)\nSialkot (SKT) ⇄ Sharjah (SHJ)"),
                 'footer_bank_partners' => SiteSetting::get('footer_bank_partners', 'Meezan Bank (Islamic), Habib Bank Limited (HBL), Bank Alfalah, Allied Bank (ABL)'),
