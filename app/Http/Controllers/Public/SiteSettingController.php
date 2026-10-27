@@ -80,6 +80,37 @@ class SiteSettingController extends Controller
                 'roadmap_step3_desc' => SiteSetting::get('roadmap_step3_desc', 'Review verified passenger manifests and finalize complete multi-sector itineraries in one click.'),
                 'roadmap_step4_title' => SiteSetting::get('roadmap_step4_title', 'Easy Payments'),
                 'roadmap_step4_desc' => SiteSetting::get('roadmap_step4_desc', 'Fast local IBFT settlements and instant 6-character PNR ticket issuance with branded print-ready PDFs.'),
+
+                // Service Guarantees Section
+                'guarantees_enabled' => SiteSetting::get('guarantees_enabled', '1'),
+                'guarantees_tagline' => SiteSetting::get('guarantees_tagline', 'Travel With Complete Confidence'),
+                'guarantees_title' => SiteSetting::get('guarantees_title', 'Backed by Round-the-Clock Care & Guarantees'),
+
+                // Travel Milestones Stats
+                'stats_bar_enabled' => SiteSetting::get('stats_bar_enabled', '1'),
+                'stat1_value' => SiteSetting::get('stat1_value', '700k+'),
+                'stat1_label' => SiteSetting::get('stat1_label', 'Flights booked'),
+                'stat2_value' => SiteSetting::get('stat2_value', '300k+'),
+                'stat2_label' => SiteSetting::get('stat2_label', 'Buses booked'),
+                'stat3_value' => SiteSetting::get('stat3_value', '50k+'),
+                'stat3_label' => SiteSetting::get('stat3_label', 'Hotels booked'),
+                'stat4_value' => SiteSetting::get('stat4_value', '20m+'),
+                'stat4_label' => SiteSetting::get('stat4_label', 'Kilometres traveled'),
+
+                // Footer & Contacts (Dynamic Admin Panel Controlled)
+                'footer_description' => SiteSetting::get('footer_description', "Pakistan's leading B2B air consolidation platform. Empowering travel agencies with wholesale flight inventory, instant seat locks, and transparent payment settlement."),
+                'footer_license_text' => SiteSetting::get('footer_license_text', 'Department of Tourist Services (DTS) Licensed Operations.'),
+                'footer_support_title' => SiteSetting::get('footer_support_title', 'Islamabad HQ Support'),
+                'footer_address' => SiteSetting::get('footer_address', SiteSetting::get('office_address', 'ISE Towers, 55-B Jinnah Avenue, Blue Area, Islamabad, Pakistan.')),
+                'footer_phone' => SiteSetting::get('footer_phone', SiteSetting::get('contact_phone', SiteSetting::get('support_phone', '+92 51 280 1199'))),
+                'footer_whatsapp' => SiteSetting::get('footer_whatsapp', SiteSetting::get('support_whatsapp', '+92 300 1234567')),
+                'footer_support_badge' => SiteSetting::get('footer_support_badge', '24/7 Ticketing Desk'),
+                'footer_hubs_sectors' => SiteSetting::get('footer_hubs_sectors', "Islamabad (ISB) ⇄ Dubai (DXB)\nLahore (LHE) ⇄ Jeddah (JED)\nKarachi (KHI) ⇄ London (LHR)\nPeshawar (PEW) ⇄ Riyadh (RUH)\nSialkot (SKT) ⇄ Sharjah (SHJ)"),
+                'footer_bank_partners' => SiteSetting::get('footer_bank_partners', 'Meezan Bank (Islamic), Habib Bank Limited (HBL), Bank Alfalah, Allied Bank (ABL)'),
+                'footer_copyright' => SiteSetting::get('footer_copyright', 'EasyTicket (Pvt) Ltd. All Rights Reserved.'),
+                'footer_security_note' => SiteSetting::get('footer_security_note', 'Secure SSL 256-Bit Encrypted'),
+                'footer_dts_reg' => SiteSetting::get('footer_dts_reg', 'DTS Reg # HQ-OPS-001'),
+                'footer_iata_text' => SiteSetting::get('footer_iata_text', 'IATA Standard e-Ticketing'),
             ],
         ]);
     }
