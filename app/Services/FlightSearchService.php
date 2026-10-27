@@ -9,20 +9,27 @@ use App\Models\User;
 class FlightSearchService
 {
     public const GLOBAL_AIRLINES = [
-        ['name' => 'Emirates', 'code' => 'EK'],
+        ['name' => 'Emirates Airline', 'code' => 'EK'],
         ['name' => 'Qatar Airways', 'code' => 'QR'],
-        ['name' => 'Etihad Airways', 'code' => 'EY'],
-        ['name' => 'Saudia', 'code' => 'SV'],
         ['name' => 'Turkish Airlines', 'code' => 'TK'],
-        ['name' => 'Flydubai', 'code' => 'FZ'],
-        ['name' => 'British Airways', 'code' => 'BA'],
-        ['name' => 'Lufthansa', 'code' => 'LH'],
         ['name' => 'Pakistan International Airlines', 'code' => 'PK'],
-        ['name' => 'Air Arabia', 'code' => 'G9'],
-        ['name' => 'Kuwait Airways', 'code' => 'KU'],
+        ['name' => 'Oman Air', 'code' => 'WY'],
+        ['name' => 'Fly Dubai', 'code' => 'FZ'],
+        ['name' => 'Etihad Airways', 'code' => 'EY'],
+        ['name' => 'Air Sial', 'code' => 'PF'],
+        ['name' => 'Virgin Atlantic', 'code' => 'VS'],
         ['name' => 'Thai Airways', 'code' => 'TG'],
-        ['name' => 'Singapore Airlines', 'code' => 'SQ'],
-        ['name' => 'Malaysia Airlines', 'code' => 'MH'],
+        ['name' => 'Kuwait Airways', 'code' => 'KU'],
+        ['name' => 'China Southern', 'code' => 'CZ'],
+        ['name' => 'Saudi Arabian', 'code' => 'SV'],
+        ['name' => 'Air Arabia', 'code' => 'G9'],
+        ['name' => 'Air Malindo', 'code' => 'OD'],
+        ['name' => 'British Airways', 'code' => 'BA'],
+        ['name' => 'flyadeal', 'code' => 'F3'],
+        ['name' => 'SalamAir', 'code' => 'OV'],
+        ['name' => 'Flynas', 'code' => 'XY'],
+        ['name' => 'Fly Jinnah', 'code' => '9P'],
+        ['name' => 'Airblue', 'code' => 'PA'],
     ];
 
     /**
