@@ -32,6 +32,9 @@ Route::get('/airports/search', [PublicApi\AirportController::class, 'search']);
 Route::get('/inventory/stats', [PublicApi\InventoryController::class, 'stats']);
 Route::get('/site-settings', PublicApi\SiteSettingController::class);
 Route::get('/featured-destinations', [Admin\DestinationController::class, 'featuredDestinations']);
+Route::get('/blogs', [PublicApi\BlogController::class, 'index']);
+Route::get('/blogs/featured', [PublicApi\BlogController::class, 'featured']);
+Route::get('/blogs/{slug}', [PublicApi\BlogController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -141,6 +144,14 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'role.admin', 'heartbeat'])-
     // Audit Logs
     Route::get('/activity-logs', [Admin\ActivityLogController::class, 'index']);
 
+    // Blog Management CRUD
+    Route::get('/blogs', [Admin\BlogController::class, 'index']);
+    Route::post('/blogs', [Admin\BlogController::class, 'store']);
+    Route::get('/blogs/{id}', [Admin\BlogController::class, 'show']);
+    Route::put('/blogs/{id}', [Admin\BlogController::class, 'update']);
+    Route::delete('/blogs/{id}', [Admin\BlogController::class, 'destroy']);
+    Route::post('/blogs/upload-image', [Admin\BlogController::class, 'uploadImage']);
+
     // Platform Settings
     Route::get('/settings', [Admin\SettingController::class, 'index']);
     Route::put('/settings', [Admin\SettingController::class, 'update']);
@@ -152,4 +163,5 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'role.admin', 'heartbeat'])-
     Route::delete('/settings/about-image', [Admin\SettingController::class, 'deleteAboutImage']);
     Route::post('/settings/about-exp-image', [Admin\SettingController::class, 'uploadAboutExpImage']);
     Route::delete('/settings/about-exp-image', [Admin\SettingController::class, 'deleteAboutExpImage']);
+    Route::post('/settings/page-image', [Admin\SettingController::class, 'uploadPageImage']);
 });

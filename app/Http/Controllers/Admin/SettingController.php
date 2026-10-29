@@ -333,6 +333,25 @@ class SettingController extends Controller
             'message' => 'Experience card graphic removed and reset to default.',
         ]);
     }
+
+    /**
+     * Upload an image for page content (About, B2B, Contact).
+     */
+    public function uploadPageImage(Request $request): JsonResponse
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|max:5120',
+        ]);
+
+        $path = $request->file('image')->store('pages', 'public');
+
+        return response()->json([
+            'message' => 'Page image uploaded successfully.',
+            'data' => [
+                'url' => Storage::disk('public')->url($path),
+            ],
+        ]);
+    }
 }
 
 
