@@ -7,6 +7,7 @@ use App\Http\Resources\ActivityLogResource;
 use App\Http\Resources\UserResource;
 use App\Models\ActivityLog;
 use App\Models\Booking;
+use App\Models\ContactInquiry;
 use App\Models\Ticket;
 use App\Models\User;
 use App\Services\InventoryService;
@@ -62,6 +63,7 @@ class DashboardController extends Controller
                 'available_seats' => $totalInventorySeats,
                 'low_stock_flights' => $lowStockFlights,
                 'online_agents' => $onlineAgentsCount,
+                'new_inquiries' => ContactInquiry::where('status', 'new')->count(),
             ],
             'recent_logs' => ActivityLogResource::collection($recentLogs),
             'online_agents_list' => UserResource::collection($onlineAgents),
