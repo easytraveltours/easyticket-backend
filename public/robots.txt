@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Allow: /sitemap.xml
+Allow: /api/sitemap.xml
+Disallow: /
+
+Sitemap: https://backend.easyticket.com.pk/sitemap.xml
