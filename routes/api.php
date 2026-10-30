@@ -35,6 +35,7 @@ Route::get('/featured-destinations', [Admin\DestinationController::class, 'featu
 Route::get('/blogs', [PublicApi\BlogController::class, 'index']);
 Route::get('/blogs/featured', [PublicApi\BlogController::class, 'featured']);
 Route::get('/blogs/{slug}', [PublicApi\BlogController::class, 'show']);
+Route::get('/sitemap.xml', [PublicApi\SitemapController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
