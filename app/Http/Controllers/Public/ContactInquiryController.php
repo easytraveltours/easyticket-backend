@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactInquiryNotification;
 use App\Models\ContactInquiry;
+use App\Models\SiteSetting;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ContactInquiryController extends Controller
 {
     /**
-     * Store a newly submitted contact inquiry.
+     * Store a newly submitted contact inquiry and notify the owner.
      */
     public function store(Request $request): JsonResponse
     {
@@ -40,6 +44,22 @@ class ContactInquiryController extends Controller
             'ip_address' => $request->ip(),
         ]);
 
+        // Determine owner notification email (configured dynamically in Contact Us CMS / Site Settings)
+        $ownerEmail = SiteSetting::get('contact_page_email')
+            ?: SiteSetting::get('contact_email')
+            ?: SiteSetting::get('footer_email')
+            ?: 'info@easyticket.com.pk';
+
+        // Dispatch email notification to owner
+        try {
+            Mail::to($ownerEmail)->send(new ContactInquiryNotification($inquiry));
+        } catch (\Throwable $e) {
+            Log::error('Failed to dispatch contact inquiry email notification: ' . $e->getMessage(), [
+                'inquiry_id' => $inquiry->id,
+                'recipient'  => $ownerEmail,
+            ]);
+        }
+
         return response()->json([
             'success' => true,
             'message' => 'Thank you for reaching out! Your message has been received and our operations desk will contact you shortly.',
@@ -50,4 +70,3 @@ class ContactInquiryController extends Controller
         ], 201);
     }
 }
-
