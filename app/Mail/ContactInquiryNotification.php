@@ -60,3 +60,4 @@ class ContactInquiryNotification extends Mailable
         return [];
     }
 }
+
